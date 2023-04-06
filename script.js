@@ -23,6 +23,11 @@ let cartasviradas = [];
 let nomes = [];
 let jogadas = 0;
 let tamanho = 0;
+let contador = 0
+function conta(){
+    contador++;
+}
+const idInterval = setInterval(conta,1000);
 function virarcarta(carta){
     let frente = carta.querySelector('.frentecarta');
     let tras = carta.querySelector('.versocarta');
@@ -71,7 +76,8 @@ function virarcarta(carta){
     jogadas++;
     tamanho = cartasviradas.length;
     function ganho(){
-        alert(`Você ganhou o jogo em ${jogadas} jogadas!`);
+        clearInterval(idInterval);
+        alert(`Você ganhou o jogo em ${jogadas} jogadas! A duração do jogo foi de ${contador} segundos!`);
     }
     if (tamanho==quantidade){
         setTimeout(ganho,500);
