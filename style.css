@@ -67,8 +67,12 @@ img{
     transition: all .5s;
     transform-style: preserve-3d;
   }
-  .versocarta {
+.versocarta {
     transform: rotateY(180deg);
-  }
-
-  
+}
+.front{
+    transform: rotateY(-180deg);
+}
+.back{
+    transform: rotateY(0deg);
+}  
