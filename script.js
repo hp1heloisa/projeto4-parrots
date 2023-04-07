@@ -47,6 +47,7 @@ function colocar(){
 function virarcarta(carta){
     let frente = carta.querySelector('.frentecarta');
     let tras = carta.querySelector('.versocarta');
+    carta.removeAttribute('onclick');
     tamanho = cartasviradas.length
     function desvirar(){
         let antestras = nomes[tamanho-1].querySelector('.versocarta');
