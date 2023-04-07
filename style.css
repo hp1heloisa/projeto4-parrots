@@ -6,8 +6,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 116px;
-    margin-right: 116px;
     
 }
 .titulo {
@@ -22,6 +20,8 @@ body{
     color: #75B79E;
 }
 .cartas{
+    gap: 34px;
+    margin: 0px 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,8 +37,6 @@ body{
     background: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 5px;
-    margin-left: 34px;
-    margin-bottom: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,12 +65,26 @@ body{
 .back{
     transform: rotateY(0deg);
 }  
+.aparece{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    
+}
 
 @media (max-width: 514px){
-    body{
-        margin-left: 109px;
-        margin-right: 109px;
-    }
     .titulo{
         font-size: 36px;
         line-height: 42px;

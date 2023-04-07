@@ -24,8 +24,10 @@ let nomes = [];
 let jogadas = 0;
 let tamanho = 0;
 let contador = 0
+const relogio = document.querySelector('.aparece');
 function conta(){
     contador++;
+    relogio.innerHTML = contador;
 }
 const idInterval = setInterval(conta,1000);
 function virarcarta(carta){
@@ -78,6 +80,10 @@ function virarcarta(carta){
     function ganho(){
         clearInterval(idInterval);
         alert(`Você ganhou o jogo em ${jogadas} jogadas! A duração do jogo foi de ${contador} segundos!`);
+        const escolha = prompt('Quer reiniciar a partida?')
+        if (escolha=='sim'){
+            window.location.reload()
+        }
     }
     if (tamanho==quantidade){
         setTimeout(ganho,500);
