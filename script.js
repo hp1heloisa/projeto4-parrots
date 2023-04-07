@@ -14,9 +14,9 @@ for (i=0;i<(quantidade/2);i++){
 selecionadas.sort(comparador);
 let carta = document.querySelector('.cartas');
 for (i=0;i<quantidade;i++){
-    carta.innerHTML += `<div class="carta" onclick="virarcarta(this)">
-                            <img src="./imagens/back.png" class="frentecarta face" />
-                            <img src="${selecionadas[i]}" class="versocarta face" />
+    carta.innerHTML += `<div class="carta" onclick="virarcarta(this)" data-test="card">
+                            <img src="./imagens/back.png" class="frentecarta face" data-test="face-down-image" />
+                            <img src="${selecionadas[i]}" class="versocarta face" data-test="face-up-image" />
                         </div>`
 }
 let cartasviradas = [];
@@ -24,7 +24,7 @@ let nomes = [];
 let jogadas = 0;
 let tamanho = 0;
 let contador = 0
-const relogio = document.querySelector('.aparece');
+const relogio = document.querySelector('.tempo');
 function conta(){
     contador++;
     relogio.innerHTML = contador;
