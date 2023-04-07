@@ -77,10 +77,12 @@ body{
     color: #86BD8D;
 }
 
-@media (max-width: 514px){
+@media (max-width: 335px){
     .titulo{
         font-size: 36px;
         line-height: 42px;
-        width: 312px;
+    }
+    .cartas{
+        margin: 0px 25%;
     }
 }
