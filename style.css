@@ -80,7 +80,7 @@ body{
 @media (max-width: 700px){
     .tempo{
         font-size: 26px;
-        top: 5px;
+        top: 0;
     }
 }
 @media (max-width: 335px){
