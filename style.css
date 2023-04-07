@@ -77,6 +77,12 @@ body{
     color: #86BD8D;
 }
 
+@media (max-width: 700px){
+    .tempo{
+        font-size: 26px;
+        top: 5px;
+    }
+}
 @media (max-width: 335px){
     .titulo{
         font-size: 36px;
