@@ -30,6 +30,20 @@ function conta(){
     relogio.innerHTML = contador;
 }
 const idInterval = setInterval(conta,1000);
+
+function remover(){
+    const clicar = document.querySelectorAll('.carta')
+    for (i=0;i<clicar.length;i++){
+        clicar[i].removeAttribute('onclick');
+    }
+}
+function colocar(){
+    const clicar = document.querySelectorAll('.carta')
+    for (i=0;i<clicar.length;i++){
+        clicar[i].setAttribute("onclick","virarcarta(this)");
+    }
+}
+
 function virarcarta(carta){
     let frente = carta.querySelector('.frentecarta');
     let tras = carta.querySelector('.versocarta');
@@ -79,8 +93,8 @@ function virarcarta(carta){
     tamanho = cartasviradas.length;
     function ganho(){
         clearInterval(idInterval);
-        alert(`Você ganhou o jogo em ${jogadas} jogadas! A duração do jogo foi de ${contador} segundos!`);
-        const escolha = prompt('Quer reiniciar a partida?')
+        alert(`Você ganhou em ${jogadas} jogadas! A duração do jogo foi de ${contador} segundos!`);
+        const escolha = prompt('Você gostaria de reiniciar a partida? (sim ou não)')
         if (escolha=='sim'){
             window.location.reload()
         }
