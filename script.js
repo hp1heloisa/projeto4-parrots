@@ -57,6 +57,7 @@ function virarcarta(carta){
         frente.classList.remove('front');
         nomes.pop();
         cartasviradas.pop();
+        colocar();
     }
     let teste = 0;
     for (i=0;i<tamanho;i++){
@@ -80,6 +81,7 @@ function virarcarta(carta){
     } else if (cartasviradas[tamanho-1]!=tras.getAttribute("src") && (tamanho%2)!=0){
         frente.classList.add('front');
         tras.classList.add('back');
+        remover();
         setTimeout(desvirar,1000);
     } else{
         if (teste<2){
@@ -97,6 +99,8 @@ function virarcarta(carta){
         const escolha = prompt('Você gostaria de reiniciar a partida? (sim ou não)')
         if (escolha=='sim'){
             window.location.reload()
+        } else{
+            remover();
         }
     }
     if (tamanho==quantidade){
