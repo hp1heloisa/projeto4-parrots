@@ -7,13 +7,13 @@ while (4>quantidade || quantidade>14 || (quantidade%2)!=0){
 }
 imagens.sort(comparador);
 let selecionadas = [];
-for (i=0;i<(quantidade/2);i++){
+for (let i=0;i<(quantidade/2);i++){
     selecionadas.push(imagens[i]);
     selecionadas.push(imagens[i]);
 }
 selecionadas.sort(comparador);
 let carta = document.querySelector('.cartas');
-for (i=0;i<quantidade;i++){
+for (let i=0;i<quantidade;i++){
     carta.innerHTML += `<div class="carta" onclick="virarcarta(this)" data-test="card">
                             <img src="./imagens/back.png" class="frentecarta face" data-test="face-down-image" />
                             <img src="${selecionadas[i]}" class="versocarta face" data-test="face-up-image" />
@@ -33,13 +33,13 @@ const idInterval = setInterval(conta,1000);
 
 function remover(){
     const clicar = document.querySelectorAll('.carta')
-    for (i=0;i<clicar.length;i++){
+    for (let i=0;i<clicar.length;i++){
         clicar[i].removeAttribute('onclick');
     }
 }
 function colocar(){
     const clicar = document.querySelectorAll('.carta')
-    for (i=0;i<clicar.length;i++){
+    for (let i=0;i<clicar.length;i++){
         clicar[i].setAttribute("onclick","virarcarta(this)");
     }
 }
@@ -61,7 +61,7 @@ function virarcarta(carta){
         colocar();
     }
     let teste = 0;
-    for (i=0;i<tamanho;i++){
+    for (let i=0;i<tamanho;i++){
         if (tras.getAttribute("src")==cartasviradas[i]){
             teste++;
         }
