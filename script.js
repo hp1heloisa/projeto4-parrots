@@ -1,9 +1,9 @@
 let imagens = ['./imagens/bobrossparrot.gif','./imagens/explodyparrot.gif','./imagens/fiestaparrot.gif',
 './imagens/metalparrot.gif','./imagens/revertitparrot.gif', './imagens/tripletsparrot.gif',
 './imagens/unicornparrot.gif']
-let quantidade = prompt('Escolha um número de cartas entre 4 e 14?')
+let quantidade = prompt('Escolha um número par de cartas entre 4 e 14:')
 while (4>quantidade || quantidade>14 || (quantidade%2)!=0){
-    quantidade = prompt('Quantas cartas você quer?');
+    quantidade = prompt('Escolha um número par de cartas entre 4 e 14:');
 }
 imagens.sort(comparador);
 let selecionadas = [];
@@ -97,11 +97,14 @@ function virarcarta(carta){
     function ganho(){
         clearInterval(idInterval);
         alert(`Você ganhou em ${jogadas} jogadas! A duração do jogo foi de ${contador} segundos!`);
-        const escolha = prompt('Você gostaria de reiniciar a partida? (sim ou não)')
-        if (escolha=='sim'){
-            window.location.reload()
-        } else{
-            remover();
+        let escolha = '';
+        while (escolha!='sim' && escolha!='não'){
+            escolha = prompt('Você gostaria de reiniciar a partida? (sim ou não)');
+            if (escolha=='sim'){
+                window.location.reload();
+            } else if (escolha == 'não'){
+                remover();
+            }
         }
     }
     if (tamanho==quantidade){
