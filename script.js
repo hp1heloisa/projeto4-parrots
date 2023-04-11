@@ -1,3 +1,23 @@
+function comparador() { 
+	return Math.random() - 0.5; 
+}
+function remover(){
+    const clicar = document.querySelectorAll('.carta')
+    for (let i=0;i<clicar.length;i++){
+        clicar[i].removeAttribute('onclick');
+    }
+}
+function colocar(){
+    const clicar = document.querySelectorAll('.carta')
+    for (let i=0;i<clicar.length;i++){
+        clicar[i].setAttribute("onclick","virarcarta(this)");
+    }
+}
+function conta(){
+    contador++;
+    relogio.innerHTML = contador;
+}
+
 let imagens = ['./imagens/bobrossparrot.gif','./imagens/explodyparrot.gif','./imagens/fiestaparrot.gif',
 './imagens/metalparrot.gif','./imagens/revertitparrot.gif', './imagens/tripletsparrot.gif',
 './imagens/unicornparrot.gif']
@@ -23,27 +43,9 @@ let cartasviradas = [];
 let nomes = [];
 let jogadas = 0;
 let tamanho = 0;
-let contador = 0
+let contador = 0;
 const relogio = document.querySelector('.tempo');
-function conta(){
-    contador++;
-    relogio.innerHTML = contador;
-}
 const idInterval = setInterval(conta,1000);
-
-function remover(){
-    const clicar = document.querySelectorAll('.carta')
-    for (let i=0;i<clicar.length;i++){
-        clicar[i].removeAttribute('onclick');
-    }
-}
-function colocar(){
-    const clicar = document.querySelectorAll('.carta')
-    for (let i=0;i<clicar.length;i++){
-        clicar[i].setAttribute("onclick","virarcarta(this)");
-    }
-}
-
 function virarcarta(carta){
     let frente = carta.querySelector('.frentecarta');
     let tras = carta.querySelector('.versocarta');
@@ -110,7 +112,4 @@ function virarcarta(carta){
     if (tamanho==quantidade){
         setTimeout(ganho,500);
     }
-}
-function comparador() { 
-	return Math.random() - 0.5; 
 }
